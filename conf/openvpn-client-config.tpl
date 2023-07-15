@@ -1,7 +1,7 @@
 client
-dev tun
-proto udp
-remote {{ .ServerAddress }} {{ .Port }} {{ .Proto }}
+dev {{ .Device }}
+proto {{ .Proto}}
+remote {{ .ServerAddress }} {{ .ClientPort }} {{ .Proto }}
 resolv-retry infinite
 user nobody
 group nogroup

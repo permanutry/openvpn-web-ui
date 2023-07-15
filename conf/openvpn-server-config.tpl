@@ -3,7 +3,7 @@ management 0.0.0.0 2080
 port {{ .Port }}
 proto {{ .Proto }}
 
-dev tun
+dev {{ .Device }}
 
 ca {{ .Ca }}
 cert {{ .Cert }}
@@ -14,11 +14,12 @@ keysize {{ .Keysize }}
 auth {{ .Auth }}
 dh {{ .Dh }}
 
-server 10.0.70.0 255.255.255.0
+server {{ .Server }}}
+route {{ .Route }}
 ifconfig-pool-persist {{ .IfconfigPoolPersist }}
-push "route 10.0.60.0 255.255.255.0"
-push "dhcp-option DNS 8.8.8.8"
-push "dhcp-option DNS 8.8.4.4"
+push  {{ .PushRoute }}
+push {{ .DNSServer1 }}
+push {{ .DNSServer2 }}
 
 keepalive {{ .Keepalive }}
 comp-lzo
@@ -40,7 +41,7 @@ ncp-ciphers AES-256-GCM:AES-192-GCM:AES-128-GCM
 user nobody
 group nogroup
 
-status openvpn-status.log
+status /var/log/openvpn/openvpn-status.log
 explicit-exit-notify 1
 crl-verify pki/crl.pem
 

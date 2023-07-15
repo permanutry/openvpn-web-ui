@@ -4,9 +4,10 @@ import (
 	"crypto/tls"
 	"errors"
 	"fmt"
-	"github.com/adamwalach/openvpn-web-ui/models"
+
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"
+	"github.com/d3vilh/openvpn-web-ui/models"
 	"github.com/go-ldap/ldap/v3"
 	"gopkg.in/hlandau/passlib.v1"
 )
@@ -14,7 +15,7 @@ import (
 var authError error
 
 func init() {
-	authError = errors.New("Invalid login or password.")
+	authError = errors.New("invalid login or password")
 }
 
 func Authenticate(login string, password string, authType string) (*models.User, error) {

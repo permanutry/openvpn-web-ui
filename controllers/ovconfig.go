@@ -1,16 +1,17 @@
 package controllers
 
 import (
-	"github.com/adamwalach/openvpn-web-ui/state"
 	"html/template"
 	"path/filepath"
 
-	"github.com/adamwalach/go-openvpn/server/config"
-	mi "github.com/adamwalach/go-openvpn/server/mi"
-	"github.com/adamwalach/openvpn-web-ui/lib"
-	"github.com/adamwalach/openvpn-web-ui/models"
+	"github.com/d3vilh/openvpn-web-ui/state"
+
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"
+	"github.com/d3vilh/openvpn-server-config/server/config"
+	mi "github.com/d3vilh/openvpn-server-config/server/mi"
+	"github.com/d3vilh/openvpn-web-ui/lib"
+	"github.com/d3vilh/openvpn-web-ui/models"
 )
 
 type OVConfigController struct {

@@ -2,17 +2,17 @@ package controllers
 
 import (
 	"encoding/json"
-	"github.com/adamwalach/openvpn-web-ui/state"
 
-	mi "github.com/adamwalach/go-openvpn/server/mi"
+	mi "github.com/d3vilh/openvpn-server-config/server/mi"
+	"github.com/d3vilh/openvpn-web-ui/state"
 )
 
-//APISignalController sends signals to OpenVPN daemon
+// APISignalController sends signals to OpenVPN daemon
 type APISignalController struct {
 	APIBaseController
 }
 
-//KillParams contains CommonName of session to kill
+// KillParams contains CommonName of session to kill
 type SignalParams struct {
 	Sname string `json:"sname"`
 }
